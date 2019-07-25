@@ -1,6 +1,5 @@
 # .NET Desktop
 
-
 trigger:
 - master
 
@@ -65,16 +64,7 @@ steps:
     archiveFile: '$(Build.ArtifactStagingDirectory)/eMandates.DotNet.Creditor.Libraries.$(VAR_VERSION).zip'
     replaceExistingArchive: true
 
-#- task: CopyFiles@2
-#  displayName: 'Copy Files to: $(Build.ArtifactStagingDirectory)'
-#  inputs:
-#    #Contents: "**"
-#    Contents: "$(Build.SourcesDirectory)\\DotNet\\eMandates.Merchant.Library\\bin\\Release\\*"
-#    TargetFolder: '$(Build.ArtifactStagingDirectory)'
-
 - task: PublishBuildArtifacts@1
   inputs:
     pathToPublish: $(Build.ArtifactStagingDirectory)
     artifactName: Library
-
-#some change...
